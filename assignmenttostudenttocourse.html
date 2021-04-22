@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradings</title>
+    <link rel="stylesheet" href="css/css.css" />
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <p> Athens Coding Academy </p>
+        </header>
+
+        <main>
+            <nav id="topmenu"> 
+                <a href="index.html">Home</a>
+                <a href="courses.html" >Courses</a>
+                <a href = "trainers.html" >Trainers</a>
+                <a href = "students.html">Students</a>
+                <a class="active" href = "#" >Assignments</a>
+        </nav>
+
+            <div class="mainsquare">
+                <section class="middlesquare" id="middlesquareassignments">
+                    <h1 class="pagetitle"> Assignment Student Per Course</h1>
+
+                    <div class="buttonaddeditlink">
+                        <button type="button" id="addassignment" class="buttons" onclick="showAddAssStudLink()">Submit
+                            Assignment</button>
+                        <button type="button" id="editassignment" class="buttons" onclick="showUpdAssStudLink()">Update
+                            Submissions</button>
+                    </div>
+
+                    <form class="forms" id="assignmentform" name="assignmenttostudent">
+                        <table class="tables" id="grading">
+
+                            <tr>
+                                <td class="titles"> Courses / Student </td>
+                                <td class="titles"> Assignments </td>
+                            </tr>
+
+                            <tr>
+                                <td> <input list="enrollments" id="enrollmentselect" placeholder="Select Enrollment"
+                                        name="enrollments" onfocus="populateEnrollmentDatalist()">
+                                    <datalist id="enrollments">
+                                        <option value="default"> Select Enrollment </option>
+                                    </datalist>
+                                </td>
+                                <td> <select class="selects selectlink" id="selectassignment" onfocus="populateAssignmentOfCourseSelect()">  
+                                        <option id = "option" value="default" selected> Select Assignment</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="emptyastc" colspan="2"></td>
+                            </tr>
+                        </table>
+
+                        <table class="tables" id="updategrading">
+
+                            <tr>
+                                <td class="emptyastc" colspan="3"></td>       
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"> <input list="selectassPerStPerC" id="submissionsinput"
+                                        placeholder="Select Submitted Assignment" name="submissions"
+                                        onfocus="populateSubmissionDatalist()" onchange="populateGradeFields()">
+                                    <datalist id="selectassPerStPerC">
+                                        <option value="default"> Select Submitted Assignment </option>
+                                    </datalist>
+                                </td>
+
+                                <td><button class="lowerbutton" type="button" id="editbuttonaspc"
+                                        onclick="makeeditable()">Click to Edit</button> </td>
+                            </tr>
+                            <tr>
+                                <td class="emptyastc" colspan="3"></td>
+                            </tr>
+                        </table>
+                           
+                        <table id= "gradeform">
+                            <tr>
+                                <td class="titles"> Oral Grade </td>
+                                <td class="titles"> Total Grade</td>
+
+                            </tr>
+
+                            <tr>
+                                <td><input class="inputs" id="oral" type="number" min="1" max="20" value= "0" name="oralgrade"></td>
+                                <td><input class="inputs" id="total" type="number" min="1" max="80" value= "0"  name="totalgrade"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="emptyastc" colspan="2"></td>       
+                            </tr>
+                            <tr>
+                                <td class="emptyastc" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="assignment" id="filebutton"><input type="file" id="assignment"
+                                            name="stass" multiple>Upload Assignment</label></td>
+                                <td><button type="reset" class="lowerbutton" id="resetbutton" name="reset">Reset
+                                        Values</button></td>
+                            </tr>
+                            <tr>
+                                <td class="emptyastc" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td class="emptyastc" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td><a href='assignments.html'><button id="backtoup" class="lowerbutton"
+                                            type="button">Back to Assignments</button></a></td>
+
+
+                                <td><button class="lowerbutton" type="button" id="addlink" name="update"
+                                        onclick="addGrades()">Submit Assignment</button></td>
+                            </tr>
+                        </table>
+                       
+                    </form>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p> Copyright &copy; 2020 All Rights Reserved </p>
+        </footer>
+
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.js"></script>
+
+</body>
+
+</html>

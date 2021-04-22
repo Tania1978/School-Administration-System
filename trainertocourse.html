@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Trainer</title>
+    <link rel="stylesheet" href="css/css.css" />
+</head>
+<body  onload="createTrainerLinks()">
+    <div id="container">
+        <header>
+            <p> Athens Coding Academy </p>
+        </header>
+
+        <main>
+            <nav id="topmenu">
+                <a href="index.html" >Home</a>
+                <a href="courses.html" >Courses</a>
+                <a class="active" href="#">Trainers</a>
+                <a href="students.html" >Students</a>
+                <a href="assignments.html" >Assignments</a>
+            </nav>
+
+            <div class="mainsquare">
+                <section class="middlesquare" id="middlesquaretrainers">
+                    <h1 class="pagetitle"> Trainer to Course</h1>
+
+                    <div class = "buttonaddeditlink">
+                        <button type="button" id="addtrainer" class = "buttons" onclick="showAddLink()" >Link Trainer to Course</button>
+                        <button type="button" id="edittrainer" class = "buttons" onclick="showLinkTable(); createLinksTable()">Update Trainer Links</button>
+                    </div>
+
+                    <form class = "forms"  id = "trainerform"  name="trainerstocourses">
+                        <table id="updateandback">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" >Select link to remove, then click Update</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><a href='trainers.html'><button class="lowerbutton" type="button">Back to Trainers</button></a></td>
+                                <td><button class="lowerbutton" type="button" onclick="createLinksTable(); displaymsg()" name="update">Update</button></td>
+                            </tr> 
+                            </tbody> 
+                        </table>
+                     
+                    <table id = "trlinktable">          
+                        <tr>
+                            <th>Course</th>
+                            <th>Trainer</th>    
+                        </tr>   
+                    </table>
+                  
+                    <table class="tables" id="link">
+
+                        <tr>
+                            <td  class ="titles"> Courses </td>
+                            <td  class ="titles"> Trainers </td>
+                          
+                        </tr>
+
+                         <tr>
+                            <td> <select class ="selects selectlink" id="selecttrainer" onfocus = "populateTrainerSelect()">
+                                    <option value="default" > Select Trainer</option>
+                                    </select>
+                            </td>
+                            <td> <select class ="selects selectlink" id="selectcourse" onfocus = "populateCourseSelect()">
+                                <option value="default" > Select Course</option>
+                                </select>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td id="emptytrlink" colspan="2"></td>
+                        </tr>
+                    </table>   
+
+                    <table id="backadd">
+                        <tr>
+                        <td><a href='trainers.html'><button id= "backtoadd"  class="lowerbutton" type="button">Back to Trainers</button></a></td>
+                    
+                    
+                        <td><button class="lowerbutton" type="button" id= "addlink" onclick="return(createTrainerLink())" name="update">Add Link</button></td>
+                    </tr>
+                    </table>
+
+                
+                  </form> 
+                            <div id="result"></div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p> Copyright &copy; 2020 All Rights Reserved </p>
+        </footer>
+
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.js"></script>
+</body>
+</html>

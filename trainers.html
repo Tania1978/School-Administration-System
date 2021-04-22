@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainers</title>
+    <link rel="stylesheet" href="css/css.css" />
+</head>
+<body  onload="createCourses(); createTrainers(); createStudents(); createAssignments(); createTrainerLinks(); createStudentLinks(); createAssignmentLinks()">
+    <div id="container">
+        <header>
+            <p> Athens Coding Academy </p>
+        </header>
+
+        <main>
+            <nav id="topmenu">
+                <a href="index.html" >Home</a>
+                <a href="courses.html" >Courses</a>
+                <a class="active" href="#">Trainers</a>
+                <a href="students.html" >Students</a>
+                <a href="assignments.html" >Assignments</a>
+            </nav>
+
+            <div class="mainsquare">
+                <section class="middlesquare" id="middlesquaretrainers">
+                    <h1 class="pagetitle"> Trainers</h1>
+
+                    <div class = "buttonaddeditlink">
+                        <button type="button" id="addtrainer" class = "buttons" onclick="showaddform(); resetAll()">Add New Trainer</button>
+                        <button type="button" id="edittrainer" class = "buttons" onclick="showeditform()">Edit Trainer</button>
+                        <a href='trainertocourse.html'><button id="linktrainer" type="button" >Assign Trainer</button></a>
+                    </div>
+
+                 <form class = "forms"  id = "trainerform"  name="trainers">
+                    <table class="tables" id="existingtrainers">
+                            <tr>
+                                <td> <select class ="selects" id="selecttrainer" onfocus = "populateTrainerSelect()" onchange="populatetrainerfields()">
+                                    <option value="default" > Select Trainer</option>
+                                    </select></td>
+                                <td>
+                                    <button class="lowerbutton" type="button" id="editbutton" onclick="makeeditable()">Click to Edit</button>   
+                                </td>
+                            </tr>
+                    </table>
+
+                   
+                         <table id="addtrainerform" class="tables">
+                                
+                                    <tr>
+                                        <td class ="titles"> First Name </td>
+                                        <td class ="titles"> Last Name</td>
+                                        <td class ="titles"> Gender </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><input class="inputs" id="firstname"  type="text"
+                                                placeholder="First Name" name="firstname" onchange="hideerrormsg()" required>
+                                        </td>
+
+                                        <td><input class="inputs" id="lastname"  type="text"
+                                                placeholder="Last Name" name="lastname" onchange="hideerrormsg()" required>
+                                        </td>
+
+                                        <td>  <select class = "selects" id= "selectgender" name="gender" required> 
+                                            <option value="" disabled selected>Select gender</option>
+                                            <option value= "Male"> Male</option>
+                                            <option value ="Female"> Female </option>
+                                              </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="firstno">Name must include at least 2 letters </td>
+                                        <td id="lastno">Name must include at least 2 letters </td>
+                                        <td></td> 
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td class ="titles" id="sub"> Subject </td>
+                                        <td class ="titles"> Telephone</td>
+                                        <td class ="titles"> Email </td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td> <select class ="selects" id="selectsubject" name="subject">
+                                            <option value= "" disabled selected> Select Subject </option>
+                                            <option value= "Back End"> Back End </option>
+                                            <option value= "Front End"> Front End </option>
+                                            <option value= "Frameworks"> Frameworks </option>
+                                            <option value= "Full Stack"> Full Stack </option>
+                                        </select></td>
+                                        <td><input class="inputs invalid" type="tel" id="tel" name="tel" onkeydown= "checkdigit()" onchange="hideerrormsg()" placeholder="10 digit number" required>  
+                                        <td><input class="inputs" id="email" type="email" placeholder="email" name="email" required></td>     
+                                    </tr>
+
+                                    <tr>
+                                        <td> </td>
+                                        <td  id ="telno">A valid phone number contains 10 digits</td> 
+                                        <td></td>
+                                    </tr>
+
+                                    <tr class ="emptytrtrainers">
+                                        <td colspan = "3"></td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td ><button type="reset"  class="lowerbutton" id= "resetbutton" name="reset">Reset Values</button></td>
+                                        <td><button type="button"  class="lowerbutton" id= "deletebutton" onclick = "deleteTrainer()" name="delete">Delete Trainer</button></td>  
+                                        <td><button type="button" class="lowerbutton" id= "submitbutton" onclick= "return(saveandshowtrainer())" name="submit">Add</button></td>   
+                                    </tr>
+                         </table>
+                     </form> 
+                            <div id="result"></div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p> Copyright &copy; 2020 All Rights Reserved </p>
+        </footer>
+
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.js"></script>
+    
+</body>
+</html>

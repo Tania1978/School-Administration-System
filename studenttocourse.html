@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Student</title>
+    <link rel="stylesheet" href="css/css.css" />
+</head>
+<body  onload="createStudentLinks()">
+    <div id="container">
+        <header>
+            <p> Athens Coding Academy </p>
+        </header>
+
+        <main>
+            <nav id="topmenu">
+                <a href="index.html" >Home</a>
+                <a href="courses.html">Courses</a>
+                <a href = "trainers.html" >Trainers</a>
+                <a class="active" href = "#">Students</a>
+                <a href = "assignments.html" >Assignments</a>
+        </nav>
+            <div class="mainsquare">
+                <section class="middlesquare" id="middlesquarestudents">
+                    <h1 class="pagetitle"> Student to Course</h1>
+
+                    <div class = "buttonaddeditlink">
+                        <button type="button" id="addstudent" class = "buttons" onclick="showAddStLink()" >Enroll Student</button>
+                        <button type="button" id="editstudent" class = "buttons" onclick="showUpdateStLink()" >Update Enrollments</button>
+                    </div>
+
+                    <form class = "forms"  id = "studentform"  name="studentstocourses">
+                        <table id="updateandbackst">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="deletelink" >Select link to remove, then click Update</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><a href='students.html'><button class="lowerbutton" type="button">Back to Students</button></a></td>
+                                <td>  <button class="lowerbutton" type="button"  name="update" onclick="findandremovestlink()">Update</button></td>
+                            </tr> 
+                            </tbody> 
+                        </table>
+                    <div id="enrollinput"><input list="enrollments" id="enrollmentsinput" placeholder = "Select Enrollment by choosing Student Name" name="enrollments" onfocus="populateEnrollmentDatalist()">
+                     <datalist id="enrollments" >
+                       <option value="default" > Select Enrollment by choosing Student Name</option>
+                     </datalist>  </div>
+                    <div><button type="reset"  class="lowerbutton" id= "resetbutton" name="reset">Reset Values</button></div>
+                    <table class="tables" id="stlink">
+
+                        <tr>
+                            <td  class ="titles"> Students </td>
+                            <td  class ="titles"> Courses </td>
+                          
+                        </tr>
+
+                         <tr>
+                            <td> <select class ="selects selectlink"   id="selectstudent" onfocus = "populateStudentSelect()">
+                                    <option value="default" > Select Student</option>
+                                    </select>
+                            </td>
+                            <td> <select class ="selects selectlink" id="selectcourse" onfocus = "populateCourseSelect()">
+                                <option value="default" > Select Course</option>
+                                </select>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td id="emptytrlink" colspan="2"></td>
+                        </tr>
+                    </table>   
+
+                    <table id="backadd">
+                        <tr>
+                            <td><a href='students.html'><button id= "backtoadd"  class="lowerbutton" type="button">Back to Students</button></a></td>
+                    
+                    
+                        <td><button class="lowerbutton" type="button" id= "addlink" onclick="return(createStudentLink())" name="update">Enroll</button></td>
+                    </tr>
+                    </table>
+                  </form> 
+                            
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p> Copyright &copy; 2020 All Rights Reserved </p>
+        </footer>
+
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.js"></script>
+</body>
+</html>

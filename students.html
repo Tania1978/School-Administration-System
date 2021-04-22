@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link rel="stylesheet" href="css/css.css" />
+</head>
+<body onload="createTrainers(); createStudents(); createAssignments(); createTrainerLinks(); createStudentLinks(); createAssignmentLinks(); createSubmissions()">
+    <div id="container">
+        <header>
+            <p> Athens Coding Academy </p>
+        </header>
+
+        <main>
+            <nav id="topmenu">
+                    <a href="index.html" >Home</a>
+                    <a href="courses.html">Courses</a>
+                    <a href = "trainers.html" >Trainers</a>
+                    <a class="active" href = "#">Students</a>
+                    <a href = "assignments.html" >Assignments</a>
+            </nav>
+            
+
+            <div class="mainsquare">
+                <section class="middlesquare" id="middlesquarestudents">
+                    <h1 class="pagetitle"> Students</h1>
+
+                    <div class= "buttonaddeditlink">
+                        <button type="button" id="addstudent" class = "buttons" onclick="showaddform(); resetAll()">Add New Student</button>
+                        <button type="button" id="editstudent" class = "buttons" onclick="showeditform()">Edit Student</button>
+                        <a href='studenttocourse.html'><button id="linkstudent" type="button">Enroll Student</button></a>
+                    </div>
+
+                 <form class = "forms" id="studentform" name="students">
+                    <table class="tables" id="existingstudents">
+                            <tr>
+                                <td> <select class ="selects" id="selectstudent" onfocus = "populateStudentSelect()" onchange="populatestudentfields()">
+                                    <option > Select Student</option>
+                                    </select></td>
+                                <td>
+                                    <button class="lowerbutton" type="button" id="editbutton" onclick="makeeditable()">Click to Edit</button>   
+                                </td>
+                            </tr>
+                    </table>
+
+                   
+                    <table id="addstudentform" class="tables">
+                                
+                                    <tr>
+                                        <td class ="titles"> First Name </td>
+                                        <td class ="titles"> Last Name</td>
+                                        <td class ="titles"> Gender </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><input class="inputs" id="firstname" onchange="hideerrormsg()" type="text"
+                                                placeholder="First Name" name="firstname">
+                                        </td>
+
+                                        <td><input class="inputs" id="lastname" onchange="hideerrormsg()" type="text"
+                                                placeholder="Last Name" name="lastname">
+                                        </td>
+
+                                        <td> <select class = "selects" id= "selectgender" name="gender" required> 
+                                            <option value="" disabled selected>Select gender</option>
+                                            <option value= "Male"> Male</option>
+                                            <option value ="Female"> Female </option>
+                                              </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="firstno">Name must include at least 2 letters </td>
+                                        <td id="lastno">Name must include at least 2 letters </td>
+                                        <td></td> 
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td class ="titles"> Birth Date </td>
+                                        <td class ="titles"> Telephone</td>
+                                        <td class ="titles"> Email </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input class="inputs" id="stdob" type = "date" name="dateofbirth" onchange="checkBirthDate()">
+                                        <td><input class="inputs invalid" type="tel" id="tel" name="tel" onkeydown= "checkdigit()" placeholder="10 digit number" required>      
+                                        <td><input class="inputs" id="stemail" type = "email" name="email"></td>
+                                    </tr>
+
+                                    
+                                    <tr>
+                                        <td id="dobno">Birth year must be from 1960-2002 </td>
+                                        <td  id ="telno">Only 10 digit tel numbers are allowed  </td>
+                                        <td></td> 
+                                    </tr>
+
+                                    <tr class ="emptytrstudents">
+                                        <td colspan = "3"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><button type="reset"  class="lowerbutton" id= "resetbutton" name="reset">Reset Values</button></td>
+                                        <td><button type="button"  class="lowerbutton" id= "deletebutton" onclick = "deleteStudent()" name="delete">Delete Student</button></td>  
+                                        <td><button type="button" class="lowerbutton" onclick= "return(saveandshowstudent())"  id= "submitbutton"  name="submit">Submit</button></td>   
+                                    </tr>
+                         </table>
+                     </form> 
+                            <div id="result"></div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p> Copyright &copy; 2020 All Rights Reserved </p>
+        </footer>
+
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.js"></script>
+    
+</body>
+</html>

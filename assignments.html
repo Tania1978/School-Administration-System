@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <link rel="stylesheet" href="css/css.css" />
+</head>
+<body  onload="createCourses(); createTrainers(); createStudents(); createAssignments(); createTrainerLinks(); createStudentLinks(); createAssignmentLinks(); createSubmissions()">
+    <div id="container">
+        <header>
+            <p> Athens Coding Academy </p>
+        </header>
+    
+        <main>
+            <nav id="topmenu"> 
+                    <a href="index.html">Home</a>
+                    <a href="courses.html" >Courses</a>
+                    <a href = "trainers.html" >Trainers</a>
+                    <a href = "students.html">Students</a>
+                    <a class="active" href = "#" >Assignments</a>
+            </nav>
+    
+            <div class="mainsquare"> 
+                <section class="middlesquare" id="middlesquareassignments">
+                    <h1 class="pagetitle"> Assignments</h1>
+
+                    <div class= "buttonaddedit">
+                        <button type="button" id="addassignment" class = "buttons" onclick="showaddform(); resetAll()">Add Assignment</button>
+                        <button type="button" id="editassignment" class = "buttons" onclick="showeditform()">Edit Assignment</button>
+                            <a href='assignmenttocourse.html'><button type="button">Assignment to Course</button></a>
+                            <a href='assignmenttostudenttocourse.html'><button type="button">Assignment to Student</button></a>
+                        </div> 
+                        
+                    <form class = "forms"  id = "assignmentform" name="assignments">
+                        <table class="tables" id="existingassignments">
+                            <tr>
+                                <td> <select class  ="selects" id="selectass" onfocus = "populateAssignmentSelect()" onchange="populateassignmentfields()"  >
+                                        <option value= ""> Select Assignment</option>
+                                    </select></td>
+                                <td>
+                                    <button class="lowerbutton" type="button" id="editbutton" onclick="makeeditable()">Click to Edit</button>   
+                                </td>
+                            </tr>
+                    </table>
+
+                        <table id="addassignmentform" class="tables">
+
+                            <tr>
+                                <td class ="titles">  Title </td>
+                                <td class ="titles"> Description</td> 
+                                <td class ="titles"> Submission Date</td>                               
+                            </tr>
+
+                            <tr>
+                                <td><input type = "text"  class="inputs" id="title" placeholder = "title" name="title" onchange="hideerrormsg()"></td>
+                                <td><input type = "text"  class="inputs" id="description" placeholder = "description" name="description" onchange="hideerrormsg()"></td>
+                                <td ><input type = "date"  class="inputs" id="subdate" name="subdate"></td>
+                            </tr>
+
+                            <tr>
+                                <td id="titleno">Enter at least 2 characters! </td>
+                                <td id="descriptionno">Enter at least 2 characters! </td>
+                                <td id="subdateno">Submission date should be within course start and end dates </td>
+                            </tr>
+
+                            <tr>
+                                <td class ="titles"  colspan="3"></td> 
+                            </tr>
+                            
+                            <tr>
+                                <td><button type="reset"  class="lowerbutton" id= "resetbutton" name="reset">Reset Values</button></td>
+                                <td><button type="button"  class="lowerbutton" id= "deletebutton" onclick = "deleteAssignment()" name="delete">Delete Assignment</button></td>   
+                                <td><button type="button" class="lowerbutton" id= "submitbutton"  onclick= "return(saveandshowassignment())"  name="submit" >Add</button></td>    
+                            </tr>
+                         </table>
+                    </form>
+                </section> 
+             </div>
+                
+         </main>
+        
+            <footer>
+            <p> Copyright &copy; 2020 All Rights Reserved </p>
+            </footer>
+        
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.js"></script>
+</body>
+</html>

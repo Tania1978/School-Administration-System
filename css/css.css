@@ -1,0 +1,548 @@
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box; /*to auytomatically fix size if borderds and paddings are added*/
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+#container {
+    background-image: url(../images/bluecoding.jpg);
+    background-size: cover;
+    max-width: 1200px;
+    margin-left:auto; 
+    margin-right:auto;
+    }
+
+main{
+ height: 600px;
+    
+}
+
+header{
+    height:50px;
+    color:rgb(248, 247, 240);
+    font-size: xx-large;
+    font-weight: 100;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    
+}
+
+footer{
+    height:50px;
+    color:rgb(245, 244, 250);
+    text-align: right;
+    padding-top:30px;
+    padding-right: 5px;
+}
+
+#topmenu {
+    background: #11076e;
+    overflow: auto;
+    display:flex;
+    height:50px;
+}
+
+#topmenu a{
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    width: 20%; /* Four equal-width links*/
+    text-align: center; /* If you want the text to be centered */
+  }
+  
+  #topmenu a:hover {
+    background-color: rgb(18, 165, 223);
+  }
+  #topmenu a.active {
+    background-color: rgba(193, 12, 224, 0.9);
+  }
+
+  .mainsquare { 
+    height:500px;
+    background-color:rgba(16, 214, 240, 0.6);
+    
+}
+  .middlesquare{
+    height:430px;
+    position: relative;
+    top:40px;
+    padding-top:15px;
+    margin:auto;
+    width:70%;
+    border-radius:6px;
+    color:rgb(246, 246, 252);
+    background-color:rgb(14, 21, 116, 0.7);
+    text-align: center;
+    font-size: 13px;
+    
+}
+
+#middlesquareindex{
+  background-image: url(../images/registrar.jpg);
+  background-size: cover;
+  background-position: center center;
+  resize: both;
+  text-align: right;
+  padding-right: 50px;
+  font-size: xx-large; 
+}
+
+.pagetitle{
+  font-size:xx-large;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: lighter;
+}
+
+
+.buttonaddedit, .buttonaddeditlink{
+ top:10px;
+ position:relative;
+}
+
+
+.buttonaddedit button{
+  width: 28%;
+  margin-right:30px;
+  margin-left:30px;
+  margin-top:5px;
+  background-color:  rgba(193, 12, 224, 0.9);
+  text-align: center;
+  color: rgb(246, 245, 248);
+  font-family: 'Courier New', Courier, monospace;
+  padding: 14px;
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+ .buttonaddeditlink button{
+  width: 28%;
+  margin-right:10px;
+  margin-left:10px;
+  background-color:  rgba(193, 12, 224, 0.9);
+  text-align: center;
+  color: rgb(246, 245, 248);
+  font-family: 'Courier New', Courier, monospace;
+  padding: 14px;
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+ }
+
+
+select {
+  padding: 10px 10px;
+  height: 40px;
+  border-radius: 8px;
+  border-style: inset;
+  font-size: 13px;
+  font-family: 'Courier New', Courier, monospace;
+}  
+
+
+#selectcourse, #selecttrainer, #selectstudent, #selectass, #selectenroll{
+  width:50%;
+}
+
+#coursetype, #selectgender, .selectlink{
+  width:70% !important;
+}
+
+input{
+  padding: 0.5px;
+  box-sizing:content-box;
+  border-radius: 8px;
+  width:70%;
+  font-size: 13px;
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 2.8em;
+}
+
+.lowerbutton{
+  font-size: 13px;
+  height: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color:rgb(5, 25, 92);
+  color: rgb(250, 240, 240);
+  border-radius: 8px;
+  cursor: pointer;
+ }
+
+
+ #editbutton{
+  width:50%;
+ }
+
+ #submitbutton, #savebutton, #updatelinkbutton{
+  width:70%;
+ }
+
+ #resetbutton,#deletebutton{
+
+  width:70%;
+  float:left;
+  margin-left:39px;
+ }
+
+ #deletebutton {
+  visibility:hidden;
+ }
+
+ #resetbutton, #resetbutton2{
+   display:none;
+ }
+
+ @media only screen and (max-width: 500px){
+  select,input,.lowerbutton{
+   width: 60%;
+   min-width: 20px; 
+   max-width: 150px;
+   padding: 5px 5px;
+   height: 35px;
+  }
+  
+  header, .pagetitle{
+    font-size: large;
+  }
+
+  #topmenu a{
+    font-size: 10px;
+  }
+
+  .buttonaddeditlink button, .buttonaddedit button{
+    width:70%;
+    display:block;
+    float:none;
+    margin:0 auto;
+    padding: 8px;
+    font-size: smaller;
+  }
+
+  #addtrainerform, #addcourseform{
+    position:relative;
+    top:10px;
+    display:block;
+  }
+
+  .emptytrtrainers,#titleno, #streamno,#firstno,#lastno,#emailno,#dobno,#telno,#dateno,#subdateno,#subno,#descriptionno{
+   display:none;
+  }
+
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+ }
+ #existingcourses,  #existingstudents, #existingassignments,#existingtrainers{
+   position:relative;
+   top:30px;
+   width:100%;
+   visibility:hidden;
+ }
+
+ #existingcourses td, #existingtrainers td, #existingstudents td, #existingassignments td{
+  width:50%; 
+ }
+
+ #addcourseform, #addstudentform,  #addtrainerform{ 
+   
+   position:relative;
+   top:40px;
+   width:100%;
+   visibility:hidden;
+   display:table;
+ }
+
+  #addassignmentform{
+    position:relative;
+    top:60px;
+    width:100%;
+    visibility:hidden;
+  }
+
+ #addcourseform td, #addtrainerform td, #addstudentform td, #addassignmentform td{ 
+   width:33%;
+   
+ }
+
+ #titleno, #streamno,#firstno,#lastno,#emailno,#dobno,#telno,#dateno,#subdateno,#descriptionno {
+  visibility:hidden;
+  color:rgb(231, 16, 16);
+  padding-top:6px;
+  text-shadow: none;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.emptytrtrainers, .emptytrstudents{
+  height:20px;
+
+}
+
+.invalid{
+  color:red;
+}
+
+.valid{
+  color:black;
+}
+
+#link,#grading,#updategrading{
+ position:relative;
+ top:20px;
+  width:70%;
+  margin:auto;
+  display:none;
+}
+
+#link td{
+  width:33%;
+  
+}
+
+#stlink{
+  position:relative;
+  top:5px;
+   width:70%;
+   margin:auto;
+   display:none;
+}
+
+#stlink td{
+  width:33%;
+  
+}
+
+.icon{
+  display: none;
+}
+
+#trlinktable,#asstable{
+  position:relative;
+  top:40px;
+  border-collapse: collapse;
+  width: 70%;
+  margin:auto;
+  display:none;
+}
+
+#trlinktable td, #trlinktable th{
+  width:50%;
+  font-size: 11px;
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+
+#asstable td, #asstable th{
+  
+  font-size: 11px;
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+
+#trlinktable tr:nth-child(even), #asstable tr:nth-child(even) {
+  background-color: #0c19a7;
+}
+
+#trlinktable tr:hover, #asstable tr:hover {
+  
+  background-color: rgb(77, 74, 74);
+}
+
+#trlinktable th, #asstable th {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-align: center;
+  background-color: #12afc7;
+  color: white;
+  font-size: 13px;
+}
+
+
+#backadd{
+  padding-top:100px;
+  display:none;
+  width:70%;
+  margin:auto;
+
+}
+
+#backadd td, #backupd td{
+  width: 33%;
+
+}
+
+#backtoadd, #addlink, #backtoup{
+  width:70%;
+}
+
+#removelink{
+  position:relative;
+  top:20px;
+  visibility:hidden;
+  margin:auto;
+}
+
+#removestlink{
+  position:relative;
+  top:40px;
+  visibility:hidden;
+}
+
+#updatetr{
+  width:20%;
+  position:relative;
+  margin:auto;
+  top:25px;
+  visibility:hidden;
+}
+#updatest{
+  width:20%;
+  position:relative;
+  margin:auto;
+  top:45px;
+  visibility:hidden;
+}
+
+#enrollments,#enrollmentsinput{
+  position:relative;
+  top:60px;
+  visibility:hidden;
+}
+
+#enrollinput{
+  margin:auto;
+  width:70%;
+}
+
+#asstable{
+  display:none;
+  width:90%;
+  position:relative;
+  top:45px;
+}
+
+#updateassdiv{
+  width:48%;
+  float:right;
+  text-align: left;
+  position:relative;
+  top:30px;
+  visibility: hidden;
+}
+
+#selectcourseAssdiv{
+  visibility: hidden;
+  width:48%;
+  margin:auto;
+  position:relative;
+  top:30px;
+}
+
+#updateass{
+  width:40%;
+  
+}
+#selectcourseAss{
+  width:60%;
+}
+
+#removelinkmsg{
+  visibility:hidden;
+  position:relative;
+  top:20px;
+}
+
+input[type="file"] {
+ display:none;
+}
+
+#filebutton{
+  font-size: 12px;
+  height: 40px;
+  display: inline-block;
+  padding:13px;
+  border-style: outset;
+  width:70%;
+  font-family: 'Courier New', Courier, monospace;
+  background-color:rgb(95, 96, 99);
+  color: rgb(250, 240, 240);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#grading td{
+  width:50%;
+}
+
+.emptyastc{
+  height:15px;
+}
+
+#selectass, #enrollmentselect,#oral,#total{
+ width:70%;
+ font-size: 11px;
+}
+#editbuttonaspc{
+  width:70%;
+}
+
+#updategrading tr:nth-child(2) td:nth-child(1) input{
+  width:98%;
+
+}
+#updategrading tr:nth-child(5) td:nth-child(1), tr:nth-child(5) td:nth-child(2), tr:nth-child(8) td:nth-child(1), tr:nth-child(11) td:nth-child(1), tr:nth-child(11) td:nth-child(2){
+  width:40%;
+  }
+
+  #updateandback, #updateandbackst, #updateandbackass{
+    position:relative;
+    top:20px;
+    width:80%;
+    margin:auto;
+   display:none;
+    
+  }
+
+  #updateandback td, #updateandbackst td, #updateandbackass td{
+    padding-top:10px;
+    width:50%;
+  }
+
+  #updateandback tbody td button, #updateandbackst tbody td button, #updateandbackass tbody td button {
+    width:60%;
+  }
+
+  #gradeform{
+    display:none;
+    position:relative;
+    top:30px;
+    width:70%;
+    margin:auto;
+
+  }
+
+  #gradeform td {
+    width:30%;
+    
+  }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Assignment</title>
+    <link rel="stylesheet" href="css/css.css" />
+</head>
+<body  onload="createAssignmentLinks()">
+    <div id="container">
+        <header>
+            <p> Athens Coding Academy </p>
+        </header>
+
+        <nav id="topmenu"> 
+            <a href="index.html">Home</a>
+            <a href="courses.html" >Courses</a>
+            <a href = "trainers.html" >Trainers</a>
+            <a href = "students.html">Students</a>
+            <a class="active" href = "#" >Assignments</a>
+    </nav>
+
+            <div class="mainsquare">
+                <section class="middlesquare" id="middlesquareassignments">
+                    <h1 class="pagetitle"> Assignment to Course</h1>
+
+                    <div class = "buttonaddeditlink">
+                        <button type="button" id="addassignment" class = "buttons" onclick="showAddAssLink()"  >Add Assignment to Course</button>
+                        <button type="button" id="editassignment" class = "buttons" onclick="showUpdAssLink()">Update Course Assignments</button>
+                    </div>
+
+                    <form class = "forms"  id = "assignmentform"  name="assignmenttocourse">
+
+                        <table id="updateandbackass">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="deletelink">Select Course and Assignment to remove, then click Update</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><a href='assignments.html'><button class="lowerbutton" type="button">Back to Assignments</button></a></td>
+                                <td>  <button class="lowerbutton" type="button" id="updateass" name="update" onclick= "assmsg()" >Update</button></td>
+                            </tr> 
+                            </tbody> 
+                        </table>
+                      
+                       <div id="updateassdiv"></div>                        
+                       <div id="selectcourseAssdiv">
+                           <select class ="selects"  id="selectcourseAss" onfocus = "populateCourseAssSelect()" onchange= "createAssLinksTable()">
+                            <option value=""> Select Course</option>
+                           </select>
+                       </div> 
+
+                    <table id = "asstable"> 
+                        
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>   
+                            <th>Submission Date</th>
+                        </tr>   
+                    </table>
+                   
+
+                    <table class="tables" id="link">
+
+                        <tr>
+                            <td  class ="titles"> Assignments </td>
+                            <td  class ="titles"> Courses </td>
+                          
+                        </tr>
+
+                         <tr>
+                            <td> <select class ="selects selectlink"   id="selectass" onfocus = "populateAssignmentSelect()">
+                                    <option value="default" > Select Assignment</option>
+                                    </select>
+                            </td>
+                            <td> <select class ="selects selectlink" id="selectcourse" onfocus = "populateCourseSelect()">
+                                <option value="default" > Select Course</option>
+                                </select>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td id="emptytrlink" colspan="2"></td>
+                        </tr>
+                    </table>   
+
+                    <table id="backadd">
+                        <tr>
+                            <td><a href='assignments.html'><button id= "backtoup"  class="lowerbutton" type="button">Back to Assignments</button></a></td>
+                    
+                    
+                        <td><button class="lowerbutton" type="button" id= "addlink" onclick="return(createAssignmentLink())" name="update">Add Assignment</button></td>
+                    </tr>
+                    </table>
+
+                
+                  </form> 
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p> Copyright &copy; 2020 All Rights Reserved </p>
+        </footer>
+
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.js"></script>
+</body>
+</html>

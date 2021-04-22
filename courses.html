@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="css/css.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body onload="createCourses(); createTrainers(); createStudents(); createAssignments(); createTrainerLinks(); createStudentLinks(); createAssignmentLinks(); createSubmissions()">
+
+    <div id="container">
+        <header>
+            <p> Athens Coding Academy </p>
+        </header>
+
+        <main>
+            <nav class= "topnav" id="topmenu">
+                <a href="index.html" >Home</a>
+                <a class="active" href="#" >Courses</a>
+                <a href="trainers.html" >Trainers</a>
+                <a href="students.html" >Students</a>
+                <a href="assignments.html" >Assignments</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()"></a>
+            </nav>
+
+            <div class="mainsquare" >
+                <section class="middlesquare" id="middlesquarecourses">
+                    <h1 class="pagetitle"> Courses</h1>
+
+                    <div class="buttonaddedit">
+                        <button type="button" id="addcourse" class = "buttons" onclick="showaddform(); resetAll()">Add New Course</button>
+                        <button type="button" id="editcourse" class = "buttons" onclick="showeditform()">Edit Course</button>
+                    </div>
+                
+                 <form class = "forms" id = "courseform"   name="courses" >
+                    <table class="tables" id="existingcourses">
+                            <tr>
+                                <td> <select class  ="selects"  id="selectcourse" onfocus = "populateCourseSelect()" onchange="populatecoursefields()"  >
+                                        <option value= ""> Select Course</option>
+                                    </select></td>
+                                <td>
+                                    <button class="lowerbutton" type="button" id="editbutton" onclick="makeeditable()">Click to Edit</button>   
+                                </td>
+                            </tr>
+                    </table>
+              
+                    <table id="addcourseform" class="tables">
+                                    <tr>
+                                        <td class="titles"> Title </td>
+                                        <td class="titles"> Stream </td>
+                                        <td class="titles"> Type</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><input class="inputs" id="title"  type="text"
+                                                placeholder="title" name="title" onchange="hideerrormsg()">
+                                        </td>
+
+                                        <td><input class="inputs" id="stream" type="text"
+                                                placeholder="stream" name="stream" onchange="hideerrormsg()">
+                                        </td>
+
+                                        <td> <select id ="coursetype" class = "selects" name = "type">
+                                                <option value="" disabled selected>Select type</option>
+                                                <option value ="Full-Time"> Full-Time</option>
+                                                <option  value ="Part-Time"> Part-Time</option>
+                                            </select></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td id="titleno">Enter at least 2 characters! </td>
+                                        <td id="streamno">Enter at least 2 characters! </td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="titles"> Start Date </td>
+                                        <td class="titles"> End Date </td>
+                                        <td class="titles"> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td ><input class="inputs" type="date" id = "start"  name="start" ></td>
+                                        <td><input class="inputs" type="date" id = "end"  onchange="hideerrormsg()"  name="end" ></td>
+                                        <td></td>
+
+                                    <tr>
+                                        <td></td>
+                                        <td id="dateno">End date should be greater than Start date! </td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><button type="reset"  class="lowerbutton" id= "resetbutton" name="reset">Reset Values</button></td>
+                                        <td><button type="button"  class="lowerbutton" id= "deletebutton" onclick = "deleteCourse()" name="delete">Delete Course</button></td>   
+                                        <td><button type="button" class="lowerbutton" id= "submitbutton"  onclick= "return(saveandshowcourse())"  name="submit" >Add</button></td>   
+                                    </tr>
+                         </table>
+                     </form>                      
+                </section>
+            </div>    
+        </main>
+
+        <footer>
+            <p> Copyright &copy; 2020 All Rights Reserved </p>
+        </footer>
+
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.js"></script>
+    
+</body>
+
+</html>
